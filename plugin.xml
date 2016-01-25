@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.ksy.cordova.nativevideoplayer"
+    version="1.0.0">
+
+    <name>Native Video Player</name>
+    <description>Native Video Player Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,media,player,video</keywords>
+    <repo>https://github.com/kanchanay/cordova-plugin-native-video-player.git</repo>
+    <issue>https://github.com/kanchanay/cordova-plugin-native-video-player/issues</issue>
+
+    <js-module src="www/nativevideoplayer.js" name="NativeVideoPlayer">
+        <clobbers target="NativeVideoPlayer" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NativeVideoPlayer">
+                <param name="android-package" value="com.ksy.cordova.nativevideoplayer.NativeVideoPlayer"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/NativeVideoPlayer.java" target-dir="src/com/ksy/cordova/nativevideoplayer" />
+
+    </platform>
+
+</plugin>
